@@ -1,5 +1,7 @@
 const express = require('express');
 const errorHandler = require('./middleware/errorhandler.js');
+const bcrypt = require('bcrypt');
+
 const app = express();
 require('dotenv').config();
 const connectDB=require("./config/dbConnection.js");

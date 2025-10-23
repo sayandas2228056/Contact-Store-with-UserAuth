@@ -5,6 +5,9 @@ const errorHandler = (err, req, res, next) => {
         case 400:
             res.json({title:"Bad Request",message:err.message, stack: process.env.NODE_ENV === 'production' ? null : err.stack});  
             break;
+        case 401:
+            res.json({title:"Unauthorized",message:err.message, stack: process.env.NODE_ENV === 'production' ? null : err.stack});  
+            break;
         case 404:
             res.json({title:"Not Found",message:err.message, stack: process.env.NODE_ENV === 'production' ? null : err.stack});  
             break;
